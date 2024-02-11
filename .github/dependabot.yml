@@ -1,0 +1,22 @@
+version: 2
+updates:
+- package-ecosystem: bundler
+  directory: "/apps/y2bot"
+  schedule:
+    interval: weekly
+    day: saturday
+    time: "08:00"
+    timezone: Asia/Tokyo
+  open-pull-requests-limit: 10
+  labels:
+  - dependabot
+- package-ecosystem: npm
+  directory: "/"
+  schedule:
+    interval: weekly
+    day: saturday
+    time: "08:00"
+    timezone: Asia/Tokyo
+  open-pull-requests-limit: 10
+  labels:
+    - dependabot
