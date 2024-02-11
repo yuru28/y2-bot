@@ -1,0 +1,35 @@
+name: Build y2bot App
+
+on:
+  push:
+
+jobs:
+  build-y2bot-app:
+    runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        working-directory: apps/y2bot
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Set up Ruby 3.2.2
+      uses: ruby/setup-ruby@v1
+      with:
+        ruby-version: 3.2.2
+        bundler-cache: false
+
+    # ruby/setup-ruby は Gemfile の path を指定できない
+    # working-directory で手動でbundle installを実行する
+    - name: Execute bundle install
+      run: bundle install --jobs 4 --retry 3
+
+    - name: Type check
+      run: bundle exec steep check
+
+    - name: Run Rubocop
+      run: bundle exec standardrb
+
+#    - name: Run RSpec
+#      run: bundle exec rspec
