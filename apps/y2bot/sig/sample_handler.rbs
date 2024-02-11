@@ -1,0 +1,5 @@
+module App
+  class SampleHandler
+    def self.process: -> Hash[Symbol, String | Integer]
+  end
+end
