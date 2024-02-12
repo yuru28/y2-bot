@@ -4,7 +4,7 @@ source "https://rubygems.org"
 
 gem "faraday"
 gem "faraday-retry"
-gem "feedjira"
+gem "nokogiri"
 
 group :development do
   gem "standard"

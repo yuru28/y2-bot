@@ -17,7 +17,6 @@ GEM
     bigdecimal (3.1.6)
     concurrent-ruby (1.2.3)
     connection_pool (2.4.1)
-    crass (1.0.6)
     csv (3.2.8)
     drb (2.2.0)
       ruby2_keywords
@@ -27,9 +26,6 @@ GEM
       net-http
     faraday-retry (2.2.0)
       faraday (~> 2.0)
-    feedjira (3.2.2)
-      loofah (>= 2.3.1)
-      sax-machine (>= 1.0)
     ffi (1.16.3)
     fileutils (1.7.2)
     i18n (1.14.1)
@@ -41,9 +37,6 @@ GEM
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
     logger (1.6.0)
-    loofah (2.22.0)
-      crass (~> 1.0.2)
-      nokogiri (>= 1.12.0)
     minitest (5.22.2)
     mutex_m (0.2.0)
     net-http (0.4.1)
@@ -81,7 +74,6 @@ GEM
       rubocop-ast (>= 1.30.0, < 2.0)
     ruby-progressbar (1.13.0)
     ruby2_keywords (0.0.5)
-    sax-machine (1.3.2)
     securerandom (0.3.1)
     standard (1.33.0)
       language_server-protocol (~> 3.17.0.2)
@@ -124,7 +116,7 @@ PLATFORMS
 DEPENDENCIES
   faraday
   faraday-retry
-  feedjira
+  nokogiri
   standard
   steep
 

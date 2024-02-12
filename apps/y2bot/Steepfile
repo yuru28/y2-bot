@@ -7,9 +7,12 @@ target :lib do
   check "models"
 
   repo_path "vendor/rbs/gem_rbs/gems"
+
   library "uri"
   library "forwardable"
+
   library "faraday"
+  library "nokogiri"
 
   configure_code_diagnostics do |hash|
     hash[D::Ruby::MethodDefinitionMissing] = :warning
