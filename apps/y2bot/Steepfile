@@ -16,7 +16,6 @@ target :lib do
   library "nokogiri"
 
   configure_code_diagnostics do |hash|
-    hash[D::Ruby::MethodDefinitionMissing] = :warning
     hash[D::Ruby::UnknownConstant] = :information
   end
 end
