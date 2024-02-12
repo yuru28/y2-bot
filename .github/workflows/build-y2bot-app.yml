@@ -13,6 +13,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
+      with:
+        submodules: true
 
     - name: Set up Ruby 3.2.2
       uses: ruby/setup-ruby@v1
@@ -26,10 +28,10 @@ jobs:
       run: bundle install --jobs 4 --retry 3
 
     - name: Type check
-      run: bundle exec steep check
+      run: bundle exec steep check --jobs 2
 
     - name: Run Rubocop
       run: bundle exec standardrb
 
-#    - name: Run RSpec
-#      run: bundle exec rspec
+    - name: Run RSpec
+      run: bundle exec rspec

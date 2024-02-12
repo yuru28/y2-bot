@@ -1,0 +1,13 @@
+class Episode
+  attr_accessor number: Integer
+  attr_accessor title: String
+  attr_accessor date: Date
+
+  def self.all: -> Array[Episode]
+
+  def self.recent: -> Episode?
+
+  private
+
+  def initialize: (number: Integer, title: String, date: Date) -> void
+end

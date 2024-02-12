@@ -2,7 +2,16 @@
 
 source "https://rubygems.org"
 
+gem "faraday"
+gem "faraday-retry"
+gem "faraday-follow_redirects"
+gem "nokogiri"
+
 group :development do
   gem "standard"
   gem "steep"
+end
+
+group :development, :test do
+  gem "rspec"
 end
