@@ -4,9 +4,10 @@ require "faraday"
 require "faraday/retry"
 require "nokogiri"
 
+require_relative "base_model"
 require_relative "../lib/yuru28_feed_parser"
 
-class Episode
+class Episode < BaseModel
   # @dynamic number, title, date
   attr_accessor :number, :title, :date
 
