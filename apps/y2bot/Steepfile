@@ -10,6 +10,7 @@ target :lib do
 
   library "uri"
   library "forwardable"
+  library "date"
 
   library "faraday"
   library "nokogiri"
