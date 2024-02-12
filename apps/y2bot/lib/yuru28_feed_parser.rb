@@ -18,7 +18,7 @@ class Yuru28FeedParser
       title = item.at("title").text
 
       utc_datetime = DateTime.parse(item.at("pubDate").text)
-      date = utc_datetime.new_offset("+09:00").to_date
+      date = utc_datetime.new_offset("+09:00").to_date.to_s
 
       {
         title:,

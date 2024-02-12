@@ -9,11 +9,11 @@ RSpec.describe Episode do
   let(:feed_parser) { instance_double(Yuru28FeedParser) }
   let(:raw_episodes) do
     [
-      {title: "EP5 サンプル回", date: Date.parse("2024-01-05")},
-      {title: "EP4 サンプル回", date: Date.parse("2024-01-04")},
-      {title: "EP3 サンプル回", date: Date.parse("2024-01-03")},
-      {title: "EP2 サンプル回", date: Date.parse("2024-01-02")},
-      {title: "EP1 サンプル回", date: Date.parse("2024-01-01")}
+      {title: "EP5 サンプル回", date: "2024-01-05"},
+      {title: "EP4 サンプル回", date: "2024-01-04"},
+      {title: "EP3 サンプル回", date: "2024-01-03"},
+      {title: "EP2 サンプル回", date: "2024-01-02"},
+      {title: "EP1 サンプル回", date: "2024-01-01"}
     ]
   end
 

@@ -4,7 +4,7 @@ class Yuru28FeedParser
 
   def self.parse: -> Array[Hash[Symbol, String | Date]]
 
-  def parse: -> Array[Hash[Symbol, String | Date]]
+  def parse: -> Array[Hash[Symbol, String]]
 
   private
 

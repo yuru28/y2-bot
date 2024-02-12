@@ -22,11 +22,12 @@ class Episode
 
     raw_episodes.map do |raw_episode|
       number = raw_episode[:title].split[0].match(/\d+/).to_s.to_i
+      date = Date.parse(raw_episode[:date])
 
       new(
         number:,
         title: raw_episode[:title],
-        date: raw_episode[:date]
+        date:
       )
     end.sort_by(&:date).reverse
   end
