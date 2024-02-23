@@ -8,6 +8,7 @@ target :lib do
 
   repo_path "vendor/rbs/gem_rbs/gems"
 
+  library "json"
   library "uri"
   library "forwardable"
   library "date"
