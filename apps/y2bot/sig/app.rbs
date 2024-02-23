@@ -1,0 +1,9 @@
+module App
+  class FetchRecentEpisodeHandler
+    def self.process: (event: untyped, context: untyped) -> Hash[Symbol, untyped]
+  end
+
+  class CreateNewEpisodeShowNoteHandler
+    def self.process: (event: untyped, context: untyped) -> Hash[Symbol, untyped]
+  end
+end

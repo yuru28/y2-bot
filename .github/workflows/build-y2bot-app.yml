@@ -11,6 +11,10 @@ jobs:
       run:
         working-directory: apps/y2bot
 
+    env:
+      NOTION_API_TOKEN: dummy
+      NOTION_SHOW_NOTES_DATABASE_ID: 18dc745e-9cf6-4a24-99e8-ecf9f8399e32
+
     steps:
     - uses: actions/checkout@v4
       with:
