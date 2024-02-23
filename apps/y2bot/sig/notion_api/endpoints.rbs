@@ -1,0 +1,7 @@
+module NotionApi
+  module Endpoints
+    private
+
+    def post_page_endpoint: -> Hash[Symbol, Symbol | String]
+  end
+end

@@ -1,0 +1,15 @@
+module NotionApi
+  module Config
+    private
+
+    def base_url: -> String
+
+    def api_version: -> String
+
+    def notion_version: -> String
+
+    def token: -> String
+
+    def show_notes_database_id: -> String
+  end
+end

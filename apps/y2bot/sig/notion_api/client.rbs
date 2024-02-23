@@ -1,0 +1,14 @@
+module NotionApi
+  class Client
+    include Config
+    include Endpoints
+
+    @client: Faraday::Connection
+
+    def create_page_to_database: (database_id: String, name: String, emoji_icon: String?, additional_properties: Hash[Symbol, untyped]) -> Faraday::Response
+
+    private
+
+    def client: -> Faraday::Connection
+  end
+end
