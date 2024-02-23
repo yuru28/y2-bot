@@ -1,0 +1,13 @@
+class ShowNote
+  attr_reader notion_page_id: String?
+
+  attr_accessor name: String
+  attr_accessor number: Integer?
+  attr_accessor date: Date?
+
+  def self.create!: (name: String, number: Integer?, date: Date?) -> ShowNote
+
+  private
+
+  def initialize: (name: String, notion_page_id: String?, number: Integer?, date: Date?) -> void
+end
