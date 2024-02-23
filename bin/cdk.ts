@@ -12,6 +12,12 @@ const app = new App();
 const stage = app.node.tryGetContext('stage');
 const config = app.node.tryGetContext('config')[stage] || {};
 
+// TODO:
+//   本来、SSMのSecure Stringとかでやるべき。
+//   CDK上でSSMのSecure Stringを参照し環境年数にセットということが出来ないため、
+//   Lambda上で動くRubyのコードでSSMのget_parameterを使う必要アリ。
+config['notionApiToken'] = process.env.NOTION_API_TOKEN;
+
 const stackName = `Y2Bot${capitalize(stage)}Stack`;
 
 new CdkStack(app, stackName, {

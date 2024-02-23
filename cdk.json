@@ -64,8 +64,10 @@
     "@aws-cdk/aws-codepipeline:crossAccountKeysDefaultValueToFalse": true,
     "config": {
       "staging": {
+        "notionShowNotesDatabaseId": "18dc745e-9cf6-4a24-99e8-ecf9f8399e32"
       },
       "production": {
+        "notionShowNotesDatabaseId": "18dc745e-9cf6-4a24-99e8-ecf9f8399e32"
       }
     }
   }
