@@ -17,6 +17,21 @@ class ShowNote < BaseModel
     @date = date
   end
 
+  def self.find(notion_page_id)
+    client = NotionApi::Client.new
+
+    response = client.get_page(page_id: notion_page_id)
+
+    json = JSON.parse(response.body, symbolize_names: true)
+
+    new(
+      name: json.dig(:properties, :Name, :title, 0, :plain_text),
+      number: json.dig(:properties, :Number, :number),
+      date: json.dig(:properties, :収録日時, :date, :start),
+      notion_page_id: json[:id]
+    )
+  end
+
   def self.create!(name:, number: nil, date: nil)
     client = NotionApi::Client.new
 

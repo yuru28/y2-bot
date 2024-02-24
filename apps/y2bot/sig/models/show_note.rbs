@@ -5,6 +5,8 @@ class ShowNote
   attr_accessor number: Integer?
   attr_accessor date: Date?
 
+  def self.find: (String notion_page_id) -> ShowNote
+
   def self.create!: (name: String, number: Integer?, date: Date?) -> ShowNote
 
   private
