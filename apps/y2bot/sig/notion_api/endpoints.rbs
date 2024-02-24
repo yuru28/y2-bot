@@ -2,6 +2,8 @@ module NotionApi
   module Endpoints
     private
 
+    def get_page_endpoint: (page_id: String) -> Hash[Symbol, Symbol | String]
+
     def post_page_endpoint: -> Hash[Symbol, Symbol | String]
   end
 end

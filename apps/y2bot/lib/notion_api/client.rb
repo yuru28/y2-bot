@@ -13,6 +13,14 @@ module NotionApi
     include Config
     include Endpoints
 
+    def get_page(page_id:)
+      # @type var method: Symbol
+      # @type var path: String
+      method, path = get_page_endpoint(page_id:).values_at(:method, :path)
+
+      client.send(method, path)
+    end
+
     def create_page_to_database(database_id:, name:, emoji_icon: nil, additional_properties: {})
       # @type var method: Symbol
       # @type var path: String
