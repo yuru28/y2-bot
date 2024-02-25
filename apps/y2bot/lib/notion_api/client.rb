@@ -21,7 +21,7 @@ module NotionApi
       client.send(method, path)
     end
 
-    def create_page_to_database(database_id:, name:, emoji_icon: nil, additional_properties: {})
+    def create_page_to_database(database_id:, name:, emoji_icon: nil, additional_properties: {}, children: nil)
       # @type var method: Symbol
       # @type var path: String
       method, path = post_page_endpoint.values_at(:method, :path)
@@ -39,7 +39,8 @@ module NotionApi
               }
             ]
           }
-        }.merge(additional_properties)
+        }.merge(additional_properties),
+        children:
       }.compact.to_json)
     end
 

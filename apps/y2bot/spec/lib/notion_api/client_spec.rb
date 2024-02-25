@@ -22,9 +22,10 @@ RSpec.describe NotionApi::Client, vcr: true do
   end
 
   describe "#create_page_to_database" do
-    subject {}
+    let(:params) { {database_id: ENV["NOTION_SHOW_NOTES_DATABASE_ID"], name: "for testing", children:} }
+    let(:children) { nil }
 
-    let(:response) { instance.create_page_to_database(database_id: ENV["NOTION_SHOW_NOTES_DATABASE_ID"], name: "for testing") }
+    let(:response) { instance.create_page_to_database(**params) }
     let(:json) { JSON.parse(response.body, symbolize_names: true) }
 
     it "creates a new page" do
@@ -33,6 +34,45 @@ RSpec.describe NotionApi::Client, vcr: true do
       expect(json[:object]).to eq "page"
       expect(json[:parent]).to eq({type: "database_id", database_id: ENV["NOTION_SHOW_NOTES_DATABASE_ID"]})
       expect(json[:properties][:Name][:title][0][:text][:content]).to eq "for testing"
+    end
+
+    context "with children" do
+      let(:children) do
+        [
+          {
+            object: "block",
+            heading_2: {
+              rich_text: [{text: {content: "見出しレベル2"}}]
+            }
+          },
+          {
+            object: "block",
+            type: "bulleted_list_item",
+            bulleted_list_item: {
+              rich_text: [
+                {type: "text", text: {content: "リスト1"}}
+              ]
+            }
+          },
+          {
+            object: "block",
+            type: "bulleted_list_item",
+            bulleted_list_item: {
+              rich_text: [
+                {type: "text", text: {content: "リスト2"}}
+              ]
+            }
+          }
+        ]
+      end
+
+      it "creates a new page with children" do
+        expect(response.success?).to eq true
+
+        expect(json[:object]).to eq "page"
+        expect(json[:parent]).to eq({type: "database_id", database_id: ENV["NOTION_SHOW_NOTES_DATABASE_ID"]})
+        expect(json[:properties][:Name][:title][0][:text][:content]).to eq "for testing"
+      end
     end
   end
 end
