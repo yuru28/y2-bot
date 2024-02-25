@@ -19,7 +19,50 @@ module App
       number = latest_number + 1
       date = Date.today
 
-      show_note = ShowNote.create!(name: "EP#{number}", number:, date:)
+      children = [
+        {
+          object: "block",
+          heading_2: {
+            rich_text: [{text: {content: "出囃子トーク"}}]
+          }
+        },
+        {
+          object: "block",
+          type: "bulleted_list_item",
+          bulleted_list_item: {
+            rich_text: [{type: "text", text: {content: "mk"}}]
+          }
+        },
+        {
+          object: "block",
+          type: "bulleted_list_item",
+          bulleted_list_item: {
+            rich_text: [{type: "text", text: {content: "ふっくん"}}]
+          }
+        },
+        {
+          object: "block",
+          type: "bulleted_list_item",
+          bulleted_list_item: {
+            rich_text: [{type: "text", text: {content: "とっしー"}}]
+          }
+        },
+        {
+          object: "block",
+          heading_2: {
+            rich_text: [{text: {content: "メインコンテンツ"}}]
+          }
+        },
+        {
+          object: "block",
+          type: "bulleted_list_item",
+          bulleted_list_item: {
+            rich_text: [{type: "text", text: {content: ""}}]
+          }
+        }
+      ]
+
+      show_note = ShowNote.create!(name: "EP#{number}", number:, date:, children:)
 
       show_note.to_h
     end

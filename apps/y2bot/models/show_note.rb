@@ -40,7 +40,13 @@ class ShowNote < BaseModel
       "収録日時": {date: {start: date}}
     }
 
-    response = client.create_page_to_database(database_id: ENV["NOTION_SHOW_NOTES_DATABASE_ID"].to_s, name:, emoji_icon: "📝", additional_properties:, children:)
+    response = client.create_page_to_database(
+      database_id: ENV["NOTION_SHOW_NOTES_DATABASE_ID"].to_s,
+      name:,
+      emoji_icon: "📝",
+      additional_properties:,
+      children:
+    )
 
     json = JSON.parse(response.body, symbolize_names: true)
 
