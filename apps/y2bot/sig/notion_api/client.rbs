@@ -5,7 +5,9 @@ module NotionApi
 
     @client: Faraday::Connection
 
-    def create_page_to_database: (database_id: String, name: String, emoji_icon: String?, additional_properties: Hash[Symbol, untyped]) -> Faraday::Response
+    def get_page: (page_id: String) -> Faraday::Response
+
+    def create_page_to_database: (database_id: String, name: String, emoji_icon: String?, additional_properties: Hash[Symbol, untyped], children: Array[Hash[Symbol, untyped]]?) -> Faraday::Response
 
     private
 

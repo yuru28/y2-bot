@@ -1,0 +1,48 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.notion.com/v1/pages/d722161b-7fe6-4ddb-99b0-8c452697fe01
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      Notion-Version:
+      - '2022-06-28'
+      User-Agent:
+      - Faraday v2.9.0
+      Authorization:
+      - Bearer <NOTION_API_TOKEN>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 24 Feb 2024 08:36:58 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      X-Powered-By:
+      - Express
+      Vary:
+      - Accept-Encoding
+      Cf-Cache-Status:
+      - DYNAMIC
+      Server:
+      - cloudflare
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJvYmplY3QiOiJwYWdlIiwiaWQiOiJkNzIyMTYxYi03ZmU2LTRkZGItOTliMC04YzQ1MjY5N2ZlMDEiLCJjcmVhdGVkX3RpbWUiOiIyMDIzLTA3LTE5VDAxOjE0OjAwLjAwMFoiLCJsYXN0X2VkaXRlZF90aW1lIjoiMjAyMy0xMi0xMFQwMTo0NzowMC4wMDBaIiwiY3JlYXRlZF9ieSI6eyJvYmplY3QiOiJ1c2VyIiwiaWQiOiI2NDYwOTg3OC05ZTEzLTRlZWQtYWJkZS1mMzQ0NzBjNmVjZTkifSwibGFzdF9lZGl0ZWRfYnkiOnsib2JqZWN0IjoidXNlciIsImlkIjoiNjQ2MDk4NzgtOWUxMy00ZWVkLWFiZGUtZjM0NDcwYzZlY2U5In0sImNvdmVyIjpudWxsLCJpY29uIjp7InR5cGUiOiJlbW9qaSIsImVtb2ppIjoi8J+RpSJ9LCJwYXJlbnQiOnsidHlwZSI6ImRhdGFiYXNlX2lkIiwiZGF0YWJhc2VfaWQiOiIxOGRjNzQ1ZS05Y2Y2LTRhMjQtOTllOC1lY2Y5ZjgzOTllMzIifSwiYXJjaGl2ZWQiOmZhbHNlLCJwcm9wZXJ0aWVzIjp7IuOCsuOCueODiCI6eyJpZCI6IkRtelgiLCJ0eXBlIjoicmljaF90ZXh0IiwicmljaF90ZXh0IjpbXX0sIk51bWJlciI6eyJpZCI6IkpzSSU1RSIsInR5cGUiOiJudW1iZXIiLCJudW1iZXIiOm51bGx9LCLlj47pjLLml6XmmYIiOnsiaWQiOiIlNUMlM0ZsaSIsInR5cGUiOiJkYXRlIiwiZGF0ZSI6bnVsbH0sIuODm+OCueODiCI6eyJpZCI6Im5KR3MiLCJ0eXBlIjoicGVvcGxlIiwicGVvcGxlIjpbeyJvYmplY3QiOiJ1c2VyIiwiaWQiOiI2NDYwOTg3OC05ZTEzLTRlZWQtYWJkZS1mMzQ0NzBjNmVjZTkifSx7Im9iamVjdCI6InVzZXIiLCJpZCI6ImUzZTkyODE3LTM3YjEtNDc4ZS1hZDQxLTE5ODBjNGNjMWRiNSJ9LHsib2JqZWN0IjoidXNlciIsImlkIjoiYzljMDg4N2ItYWNlMi00MTUyLWFjZjYtYWQ0NmNiMjc5MTRlIn1dfSwiTmFtZSI6eyJpZCI6InRpdGxlIiwidHlwZSI6InRpdGxlIiwidGl0bGUiOlt7InR5cGUiOiJ0ZXh0IiwidGV4dCI6eyJjb250ZW50Ijoi6YCa5bi45ZueIiwibGluayI6bnVsbH0sImFubm90YXRpb25zIjp7ImJvbGQiOmZhbHNlLCJpdGFsaWMiOmZhbHNlLCJzdHJpa2V0aHJvdWdoIjpmYWxzZSwidW5kZXJsaW5lIjpmYWxzZSwiY29kZSI6ZmFsc2UsImNvbG9yIjoiZGVmYXVsdCJ9LCJwbGFpbl90ZXh0Ijoi6YCa5bi45ZueIiwiaHJlZiI6bnVsbH1dfX0sInVybCI6Imh0dHBzOi8vd3d3Lm5vdGlvbi5zby9kNzIyMTYxYjdmZTY0ZGRiOTliMDhjNDUyNjk3ZmUwMSIsInB1YmxpY191cmwiOm51bGwsInJlcXVlc3RfaWQiOiJhZThiZmI3MC1iZmVmLTQ2OGMtYmM1NS00NjFmNmExODU5M2YifQ==
+  recorded_at: Sat, 24 Feb 2024 08:36:58 GMT
+recorded_with: VCR 6.2.0

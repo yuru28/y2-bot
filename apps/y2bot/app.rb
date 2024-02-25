@@ -19,7 +19,56 @@ module App
       number = latest_number + 1
       date = Date.today
 
-      show_note = ShowNote.create!(name: "EP#{number}", number:, date:)
+      user_ids = %w[
+        64609878-9e13-4eed-abde-f34470c6ece9
+        e3e92817-37b1-478e-ad41-1980c4cc1db5
+        c9c0887b-ace2-4152-acf6-ad46cb27914e
+      ]
+
+      children = [
+        {
+          object: "block",
+          heading_2: {
+            rich_text: [{text: {content: "出囃子トーク"}}]
+          }
+        },
+        {
+          object: "block",
+          type: "bulleted_list_item",
+          bulleted_list_item: {
+            rich_text: [{type: "text", text: {content: "mk"}}]
+          }
+        },
+        {
+          object: "block",
+          type: "bulleted_list_item",
+          bulleted_list_item: {
+            rich_text: [{type: "text", text: {content: "ふっくん"}}]
+          }
+        },
+        {
+          object: "block",
+          type: "bulleted_list_item",
+          bulleted_list_item: {
+            rich_text: [{type: "text", text: {content: "とっしー"}}]
+          }
+        },
+        {
+          object: "block",
+          heading_2: {
+            rich_text: [{text: {content: "メインコンテンツ"}}]
+          }
+        },
+        {
+          object: "block",
+          type: "bulleted_list_item",
+          bulleted_list_item: {
+            rich_text: [{type: "text", text: {content: ""}}]
+          }
+        }
+      ]
+
+      show_note = ShowNote.create!(name: "EP#{number}", number:, date:, user_ids:, children:)
 
       show_note.to_h
     end
