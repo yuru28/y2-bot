@@ -1,0 +1,49 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.notion.com/v1/pages
+    body:
+      encoding: UTF-8
+      string: "{\"parent\":{\"database_id\":\"18dc745e-9cf6-4a24-99e8-ecf9f8399e32\"},\"icon\":{\"emoji\":\"\U0001F4DD\"},\"properties\":{\"Name\":{\"title\":[{\"text\":{\"content\":\"for
+        testing\"}}]},\"Number\":{\"number\":123456},\"収録日時\":{\"date\":{\"start\":\"2024-02-23\"}},\"ホスト\":{\"people\":[{\"object\":\"user\",\"id\":\"64609878-9e13-4eed-abde-f34470c6ece9\"},{\"object\":\"user\",\"id\":\"e3e92817-37b1-478e-ad41-1980c4cc1db5\"},{\"object\":\"user\",\"id\":\"c9c0887b-ace2-4152-acf6-ad46cb27914e\"}]}}}"
+    headers:
+      Content-Type:
+      - application/json
+      Notion-Version:
+      - '2022-06-28'
+      User-Agent:
+      - Faraday v2.9.0
+      Authorization:
+      - Bearer <NOTION_API_TOKEN>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 25 Feb 2024 11:21:12 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      X-Powered-By:
+      - Express
+      Vary:
+      - Accept-Encoding
+      Cf-Cache-Status:
+      - DYNAMIC
+      Server:
+      - cloudflare
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJvYmplY3QiOiJwYWdlIiwiaWQiOiI5OTRhYTZiNi1hOGYyLTRhOTktODdlZS1iMTBiOWUzN2ZlMWEiLCJjcmVhdGVkX3RpbWUiOiIyMDI0LTAyLTI1VDExOjIxOjAwLjAwMFoiLCJsYXN0X2VkaXRlZF90aW1lIjoiMjAyNC0wMi0yNVQxMToyMTowMC4wMDBaIiwiY3JlYXRlZF9ieSI6eyJvYmplY3QiOiJ1c2VyIiwiaWQiOiI5OTFlZWM1MC05NmEzLTRhNTctYmQ3MS02ZTdiYTcxZDk3YjEifSwibGFzdF9lZGl0ZWRfYnkiOnsib2JqZWN0IjoidXNlciIsImlkIjoiOTkxZWVjNTAtOTZhMy00YTU3LWJkNzEtNmU3YmE3MWQ5N2IxIn0sImNvdmVyIjpudWxsLCJpY29uIjp7InR5cGUiOiJlbW9qaSIsImVtb2ppIjoi8J+TnSJ9LCJwYXJlbnQiOnsidHlwZSI6ImRhdGFiYXNlX2lkIiwiZGF0YWJhc2VfaWQiOiIxOGRjNzQ1ZS05Y2Y2LTRhMjQtOTllOC1lY2Y5ZjgzOTllMzIifSwiYXJjaGl2ZWQiOmZhbHNlLCJwcm9wZXJ0aWVzIjp7IuOCsuOCueODiCI6eyJpZCI6IkRtelgiLCJ0eXBlIjoicmljaF90ZXh0IiwicmljaF90ZXh0IjpbXX0sIk51bWJlciI6eyJpZCI6IkpzSSU1RSIsInR5cGUiOiJudW1iZXIiLCJudW1iZXIiOjEyMzQ1Nn0sIuWPjumMsuaXpeaZgiI6eyJpZCI6IiU1QyUzRmxpIiwidHlwZSI6ImRhdGUiLCJkYXRlIjp7InN0YXJ0IjoiMjAyNC0wMi0yMyIsImVuZCI6bnVsbCwidGltZV96b25lIjpudWxsfX0sIuODm+OCueODiCI6eyJpZCI6Im5KR3MiLCJ0eXBlIjoicGVvcGxlIiwicGVvcGxlIjpbeyJvYmplY3QiOiJ1c2VyIiwiaWQiOiI2NDYwOTg3OC05ZTEzLTRlZWQtYWJkZS1mMzQ0NzBjNmVjZTkiLCJuYW1lIjoiVGFrdXlhIE11a29oaXJhIiwiYXZhdGFyX3VybCI6Imh0dHBzOi8vbGgzLmdvb2dsZXVzZXJjb250ZW50LmNvbS9hLS9BT2gxNEdoaC1HZ28zMzhfVm5ZODdvZEZUZkFYYmFBOGhiWDRWdjdDQU1nOTVBPXMxMDAiLCJ0eXBlIjoicGVyc29uIiwicGVyc29uIjp7ImVtYWlsIjoidGFrdXlhLm1rOTZAZ21haWwuY29tIn19LHsib2JqZWN0IjoidXNlciIsImlkIjoiZTNlOTI4MTctMzdiMS00NzhlLWFkNDEtMTk4MGM0Y2MxZGI1IiwibmFtZSI6IuOBteOBo+OBj+OCkyIsImF2YXRhcl91cmwiOm51bGwsInR5cGUiOiJwZXJzb24iLCJwZXJzb24iOnsiZW1haWwiOiJmdWt1cm91LmJiYi4yM0BnbWFpbC5jb20ifX0seyJvYmplY3QiOiJ1c2VyIiwiaWQiOiJjOWMwODg3Yi1hY2UyLTQxNTItYWNmNi1hZDQ2Y2IyNzkxNGUiLCJuYW1lIjoiVG9zaGlha2kgU2Vpbm8iLCJhdmF0YXJfdXJsIjoiaHR0cHM6Ly9saDMuZ29vZ2xldXNlcmNvbnRlbnQuY29tLy1Hc1hxNXBBV3dpcy9BQUFBQUFBQUFBSS9BQUFBQUFBQUhsVS9odnlXZE5ESWxPUS9waG90by5qcGciLCJ0eXBlIjoicGVyc29uIiwicGVyc29uIjp7ImVtYWlsIjoic3QxMjMxOEBnbWFpbC5jb20ifX1dfSwiTmFtZSI6eyJpZCI6InRpdGxlIiwidHlwZSI6InRpdGxlIiwidGl0bGUiOlt7InR5cGUiOiJ0ZXh0IiwidGV4dCI6eyJjb250ZW50IjoiZm9yIHRlc3RpbmciLCJsaW5rIjpudWxsfSwiYW5ub3RhdGlvbnMiOnsiYm9sZCI6ZmFsc2UsIml0YWxpYyI6ZmFsc2UsInN0cmlrZXRocm91Z2giOmZhbHNlLCJ1bmRlcmxpbmUiOmZhbHNlLCJjb2RlIjpmYWxzZSwiY29sb3IiOiJkZWZhdWx0In0sInBsYWluX3RleHQiOiJmb3IgdGVzdGluZyIsImhyZWYiOm51bGx9XX19LCJ1cmwiOiJodHRwczovL3d3dy5ub3Rpb24uc28vZm9yLXRlc3RpbmctOTk0YWE2YjZhOGYyNGE5OTg3ZWViMTBiOWUzN2ZlMWEiLCJwdWJsaWNfdXJsIjpudWxsLCJyZXF1ZXN0X2lkIjoiZmE4MmU0YzgtYjg0Yi00MDdjLWE0MjktMTg4NDFjNjFlODk5In0=
+  recorded_at: Sun, 25 Feb 2024 11:21:12 GMT
+recorded_with: VCR 6.2.0

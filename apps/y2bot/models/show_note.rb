@@ -32,13 +32,16 @@ class ShowNote < BaseModel
     )
   end
 
-  def self.create!(name:, number: nil, date: nil, children: nil)
+  def self.create!(name:, number: nil, date: nil, user_ids: [], children: nil)
     client = NotionApi::Client.new
+
+    people = user_ids.map { |id| {object: "user", id:} }
 
     additional_properties = {
       Number: {number:},
-      "収録日時": {date: {start: date}}
-    }
+      "収録日時": {date: {start: date}},
+      "ホスト": (people.length >= 1) ? {people:} : nil
+    }.compact
 
     response = client.create_page_to_database(
       database_id: ENV["NOTION_SHOW_NOTES_DATABASE_ID"].to_s,

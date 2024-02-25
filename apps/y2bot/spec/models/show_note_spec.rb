@@ -18,8 +18,23 @@ RSpec.describe ShowNote do
     let(:number) { 123456 }
     let(:date) { Date.new(2024, 2, 23) }
 
-    subject { described_class.create!(name:, number:, date:) }
+    let(:params) { {name:, number:, date:} }
+
+    subject { described_class.create!(**params) }
 
     it { is_expected.to be_a(described_class) }
+
+    context "with user_ids" do
+      let(:user_ids) {
+        %w[
+          64609878-9e13-4eed-abde-f34470c6ece9
+          e3e92817-37b1-478e-ad41-1980c4cc1db5
+          c9c0887b-ace2-4152-acf6-ad46cb27914e
+        ]
+      }
+      let(:params) { {name:, number:, date:, user_ids:} }
+
+      it { is_expected.to be_a(described_class) }
+    end
   end
 end
