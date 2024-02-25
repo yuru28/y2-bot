@@ -1,7 +1,7 @@
 import { StackProps as StackPropsType } from 'aws-cdk-lib';
 
 export interface StackProps extends StackPropsType {
-  readonly stage: string;
+  readonly stage: 'staging' | 'production';
   readonly notionApiToken: string;
   readonly notionShowNotesDatabaseId: string;
 }
