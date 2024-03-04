@@ -12,6 +12,7 @@ import { StackProps } from '../stack-props';
 import { useCapitalize } from '../utils/useCapitalize';
 import { buildFetchRecentEpisodeLambda } from './buildFetchRecentEpisodeLambda';
 import { buildCreateNewEpisodeShowNoteLambda } from './buildCreateNewEpisodeShowNoteLambda';
+import { buildNotifyNewEpisodeShowNoteToSlackLambda } from './buildNotifyNewEpisodeShowNoteToSlackLambda';
 
 const { capitalize } = useCapitalize();
 
@@ -36,7 +37,18 @@ export const buildCreateNewShowNoteStateMachine = (stack: CdkStack, props: Stack
     },
   );
 
-  const definition = fetchRecentEpisodeTask.next(createNewEpisodeShowNoteTask);
+  const notifyNewEpisodeShowNoteToSlackLambda = buildNotifyNewEpisodeShowNoteToSlackLambda(stack, props);
+  const notifyNewEpisodeShowNoteToSlackTask = new tasks.LambdaInvoke(
+    stack,
+    `NotifyNewSNToSlackTask${capitalize(props.stage)}`,
+    {
+      lambdaFunction: notifyNewEpisodeShowNoteToSlackLambda,
+    },
+  );
+
+  const definition = fetchRecentEpisodeTask
+    .next(createNewEpisodeShowNoteTask)
+    .next(notifyNewEpisodeShowNoteToSlackTask);
 
   return new sfn.StateMachine(stack, `CreateNewShowNoteStatemachine${capitalize(props.stage)}`, {
     definitionBody: sfn.DefinitionBody.fromChainable(definition),
