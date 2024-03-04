@@ -2,6 +2,7 @@
 
 require_relative "models/episode"
 require_relative "models/show_note"
+require_relative "lib/slack/client"
 
 module App
   class FetchRecentEpisodeHandler
@@ -71,6 +72,28 @@ module App
       show_note = ShowNote.create!(name: "EP#{number}", number:, date:, user_ids:, children:)
 
       show_note.to_h
+    end
+  end
+
+  class NotifyNewEpisodeShowNoteToSlackHandler
+    def self.process(event:, context:)
+      slack_client = Slack::Client.new
+
+      notion_page_id = event["Payload"]["notion_page_id"]
+
+      # NotionのページIDはUUIDv4だが、ページURLとして利用する際はハイフンを取り除かなければ404になる
+      url = "https://www.notion.so/m6a-jp/#{notion_page_id.delete("-")}"
+
+      content = <<~CONTENT
+        <!channel>
+        新しいエピソードのShow Noteが作成されました！
+        以下のリンクから確認してください。
+        #{url}
+      CONTENT
+
+      res = slack_client.post(content:)
+
+      {status: res.body}
     end
   end
 end

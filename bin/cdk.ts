@@ -17,6 +17,7 @@ const config = app.node.tryGetContext('config')[stage] || {};
 //   CDK上でSSMのSecure Stringを参照し環境年数にセットということが出来ないため、
 //   Lambda上で動くRubyのコードでSSMのget_parameterを使う必要アリ。
 config['notionApiToken'] = process.env.NOTION_API_TOKEN;
+config['slackWebhookUrl'] = process.env.SLACK_WEBHOOK_URL;
 
 const stackName = `Y2Bot${capitalize(stage)}Stack`;
 
