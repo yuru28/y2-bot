@@ -13,7 +13,7 @@ export const buildExecutionRuleForCreateNewShowNoteStateMachine = (
   const { capitalize } = useCapitalize();
 
   return new events.Rule(stack, `ScheduleRuleForCreateNewShowNoteStateMachine${capitalize(props.stage)}`, {
-    schedule: events.Schedule.expression('cron(0 9 ? * FRI *)'), // 毎週金曜 朝9時
+    schedule: events.Schedule.expression('cron(0 0 ? * FRI *)'), // 日本時間 金曜 朝9時
     targets: [new targets.SfnStateMachine(stateMachine)],
   });
 };
