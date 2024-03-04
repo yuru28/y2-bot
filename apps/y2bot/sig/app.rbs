@@ -6,4 +6,8 @@ module App
   class CreateNewEpisodeShowNoteHandler
     def self.process: (event: untyped, context: untyped) -> Hash[Symbol, untyped]
   end
+
+  class NotifyNewEpisodeShowNoteToSlackHandler
+    def self.process: (event: untyped, context: untyped) -> Hash[Symbol, untyped]
+  end
 end
