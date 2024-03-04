@@ -80,7 +80,10 @@ module App
       slack_client = Slack::Client.new
 
       notion_page_id = event["Payload"]["notion_page_id"]
-      url = "https://www.notion.so/m6a-jp/#{notion_page_id}"
+
+      # NotionのページIDはUUIDv4だが、ページURLとして利用する際はハイフンを取り除かなければ404になる
+      url = "https://www.notion.so/m6a-jp/#{notion_page_id.delete("-")}"
+
       content = <<~CONTENT
         <!channel>
         新しいエピソードのShow Noteが作成されました！
