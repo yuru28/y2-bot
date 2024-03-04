@@ -16,7 +16,8 @@ module Slack
       client.post(
         webhook_url,
         {
-          text: content
+          text: content,
+          unfurl_links: true
         }.to_json,
         "Content-Type" => "application/json"
       )
