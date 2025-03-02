@@ -15,7 +15,7 @@
     "cdk": "cdk"
   },
   "devDependencies": {
-    "@types/jest": "^29.5.12",
+    "@types/jest": "^29.5.14",
     "@types/node": "20.11.20",
     "@types/prettier": "^3.0.0",
     "@typescript-eslint/eslint-plugin": "^7.0.0",
